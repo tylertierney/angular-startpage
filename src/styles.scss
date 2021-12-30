@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  box-sizing: border-box;
+  --hueValue: 240;
+  --darkColor: hsl(var(--hueValue), 9%, 9%);
+  --lightColor: hsl(var(--hueValue), 8%, 17%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: var(--lightColor);
+  overflow: hidden;
+}
+
+.wavesContainer {
+  // background-color: var(--darkColor);
+  height: 50%;
+  top: 0;
+  left: 0;
+}
+
+.bodyContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bodySpacer {
+  height: 50%;
+}
+
+.contentContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.settingsBtn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  opacity: 0.4;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.settingsBtn:hover {
+  opacity: 0.9;
+}
+
+.settingsBtn:active {
+  transition: 0.1s ease-in-out;
+  opacity: 0.9;
+  transform: translate(3%, 3%);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+}

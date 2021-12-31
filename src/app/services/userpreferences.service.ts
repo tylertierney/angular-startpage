@@ -23,6 +23,11 @@ export class UserpreferencesService {
 
     if (infoFromLocalStorage) {
       this.userPreferencesStore.next(JSON.parse(infoFromLocalStorage));
+    } else {
+      localStorage.setItem(
+        'startpage-info',
+        JSON.stringify({ darkColor: '#14143d' })
+      );
     }
 
     return null;

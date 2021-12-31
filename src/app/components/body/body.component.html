@@ -1,9 +1,9 @@
 <div class="bodyContainer">
   <div class="contentContainer">
-    <app-toolbar></app-toolbar>
-    <button (click)="test()">test</button>
+    <app-toolbar (openPreferences)="openPreferences()"></app-toolbar>
   </div>
-  <app-preferences></app-preferences>
+  <app-preferences *ngIf="prefModalIsOpen"></app-preferences>
+  <p [style.color]="'white'">{{ prefModalIsOpen }}</p>
   <div class="bodySpacer"></div>
   <div
     class="wavesContainer"

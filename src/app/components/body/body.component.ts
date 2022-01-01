@@ -28,7 +28,7 @@ export class BodyComponent implements OnInit {
     this.subscription = this.userPrefService.currentUserPreferences.subscribe(
       (preferences) => (this.preferences = preferences)
     );
-    this.userPrefService.getPrefsFromLocalStorage();
+    this.userPrefService.getInitialPrefsFromLocalStorage();
   }
 
   toggleShowPrefModal(): void {
@@ -36,11 +36,17 @@ export class BodyComponent implements OnInit {
     this._preferencesModalService.togglePrefModalShowing();
   }
 
-  handleColorChange(e: any): void {
-    localStorage.setItem(
-      'startpage-info',
-      JSON.stringify({ darkColor: e.target.value })
+  handleColorChange(e: InputEvent): void {
+    this.userPrefService.updateCurrentPrefs(
+      'darkColor',
+      (e.target as HTMLInputElement).value
     );
-    this.userPrefService.getPrefsFromLocalStorage();
+  }
+
+  handleNameChange(e: Event): void {
+    this.userPrefService.updateCurrentPrefs(
+      'name',
+      (e.target as HTMLInputElement).value
+    );
   }
 }

@@ -3,6 +3,7 @@
     <app-preferences
       *ngIf="prefModalIsOpen"
       (handleColorChange)="handleColorChange($event)"
+      (handleNameChange)="handleNameChange($event)"
       (toggleShowPrefModal)="toggleShowPrefModal()"
       [preferences]="preferences"
     ></app-preferences>

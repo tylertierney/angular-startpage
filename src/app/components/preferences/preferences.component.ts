@@ -10,6 +10,7 @@ import { PreferencesInterface } from 'src/app/services/userpreferences.service';
 export class PreferencesComponent implements OnInit {
   @Output() toggleShowPrefModal = new EventEmitter();
   @Output() handleColorChange = new EventEmitter();
+  @Output() handleNameChange = new EventEmitter();
   @Input() preferences: PreferencesInterface | null;
 
   faCog = faCog;
@@ -26,7 +27,11 @@ export class PreferencesComponent implements OnInit {
     e.stopPropagation();
   }
 
-  onColorChange(e: any) {
+  onColorChange(e: Event) {
     this.handleColorChange.emit(e);
+  }
+
+  onNameChange(e: Event) {
+    this.handleNameChange.emit(e);
   }
 }

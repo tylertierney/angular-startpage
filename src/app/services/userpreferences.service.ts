@@ -18,7 +18,7 @@ export class UserpreferencesService {
 
   constructor() {}
 
-  getPrefsFromLocalStorage = () => {
+  getInitialPrefsFromLocalStorage = () => {
     let infoFromLocalStorage = localStorage.getItem('startpage-info');
 
     if (infoFromLocalStorage) {
@@ -26,10 +26,21 @@ export class UserpreferencesService {
     } else {
       localStorage.setItem(
         'startpage-info',
-        JSON.stringify({ darkColor: '#141111', name: 'Tyler' })
+        JSON.stringify({ darkColor: '#141111', name: '' })
       );
     }
 
     return null;
+  };
+
+  updateCurrentPrefs = (property: string, newValue: string) => {
+    let infoFromLocalStorage = localStorage.getItem('startpage-info');
+
+    if (infoFromLocalStorage) {
+      let asObject = JSON.parse(infoFromLocalStorage);
+      asObject[property] = newValue;
+      localStorage.setItem('startpage-info', JSON.stringify(asObject));
+      this.userPreferencesStore.next(asObject);
+    }
   };
 }

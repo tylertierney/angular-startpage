@@ -1,19 +1,40 @@
+<p class="instructionsText">Click to activate</p>
 <ul class="bookmarksList">
   <li
-    *ngFor="let bookmark of arr"
+    *ngFor="let bookmark of arr; let i = index"
+    (click)="handleListItemClick(i)"
     class="bookmarksListItem"
-    [style.border]="bookmark.active ? '1px solid' : 'none'"
-    [style.border-color]="bookmark.color"
+    [style.border]="'1px solid'"
+    [style.border-color]="bookmark.active ? bookmark.color : 'transparent'"
   >
     <fa-icon
       class="bookmarksListIcon"
       [style.color]="bookmark.active ? bookmark.color : 'inherit'"
       [icon]="bookmark.icon"
     ></fa-icon>
-    <div class="inputFieldContainer">
-      <span>URL</span>
-      <input class="textInput" type="text" value="something" />
+    <div class="urlContainer">
+      <div
+        class="urlSlidingContainer"
+        [style.transform]="
+          bookmark.isEditing ? 'translate(-50%, 0)' : 'translate(0)'
+        "
+      >
+        <div class="staticUrlField">
+          <span>{{ bookmark.url }}</span>
+        </div>
+        <div class="inputFieldContainer">
+          <span>URL</span>
+          <input
+            (click)="stopPropagation($event)"
+            class="textInput"
+            type="text"
+            value="something"
+          />
+        </div>
+      </div>
     </div>
-    <fa-icon [icon]="faEdit"></fa-icon>
+    <button class="iconButton" (click)="turnOnEditing(i, $event)">
+      <fa-icon [icon]="faEdit"></fa-icon>
+    </button>
   </li>
 </ul>

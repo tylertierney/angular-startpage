@@ -8,29 +8,3 @@
   align-items: center;
   padding: 5px;
 }
-
-.settingsBtn {
-  background-color: transparent;
-  border: none;
-  color: white;
-  opacity: 0.2;
-  border-radius: 10px;
-  font-size: 1.4rem;
-  outline: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.settingsBtn:hover {
-  opacity: 0.9;
-}
-
-.settingsBtn:active {
-  transition: 0.1s ease-in-out;
-  opacity: 0.9;
-  transform: translate(3%, 3%);
-}

@@ -4,6 +4,7 @@ import {
   faGithub,
   faLinkedin,
   faReddit,
+  faRedditAlien,
 } from '@fortawesome/free-brands-svg-icons';
 
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
@@ -16,23 +17,15 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 export class BookmarksComponent implements OnInit {
   isEditing: boolean = false;
   faEdit = faEdit;
-  faFacebook = faFacebook;
-  faGithub = faGithub;
-  faLinkedin = faLinkedin;
+
   arr: any[] = [
-    {
-      name: 'Facebook',
-      icon: faFacebook,
-      url: 'https://www.facebook.com',
-      color: '#4267B2',
-      active: false,
-    },
     {
       name: 'Linkedin',
       icon: faLinkedin,
       url: 'https://www.linkedin.com',
       color: '#2867B2',
       active: true,
+      isEditing: false,
     },
     {
       name: 'Github',
@@ -40,17 +33,40 @@ export class BookmarksComponent implements OnInit {
       url: 'https://www.github.com',
       color: 'white',
       active: true,
+      isEditing: false,
+    },
+    {
+      name: 'Facebook',
+      icon: faFacebook,
+      url: 'https://www.facebook.com',
+      color: '#4267B2',
+      active: false,
+      isEditing: false,
     },
     {
       name: 'Reddit',
-      icon: faReddit,
+      icon: faRedditAlien,
       url: 'https://www.reddit.com',
       color: '#FF4500',
       active: true,
+      isEditing: false,
     },
   ];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  handleListItemClick(index: number) {
+    this.arr[index].active = !this.arr[index].active;
+  }
+
+  stopPropagation(e: Event) {
+    e.stopPropagation();
+  }
+
+  turnOnEditing(index: number, e: Event) {
+    this.arr[index].isEditing = !this.arr[index].isEditing;
+    e.stopPropagation();
+  }
 }

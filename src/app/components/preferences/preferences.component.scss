@@ -14,7 +14,7 @@
 }
 
 .preferencesModal {
-  background-color: rgb(black, 0.5);
+  background-color: rgb(black, 0.9);
   justify-content: flex-start;
   align-items: center;
   padding: 1rem;
@@ -45,16 +45,6 @@
       label {
         margin: 0 1rem 0 0;
         user-select: none;
-      }
-
-      .textInput {
-        font-size: inherit;
-        color: inherit;
-        background-color: transparent;
-        border: 2px solid var(--textColor);
-        padding: 3px 0.2rem;
-        opacity: 0.8;
-        border-radius: 4px;
       }
 
       .colorInput {

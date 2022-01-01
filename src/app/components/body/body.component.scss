@@ -3,3 +3,27 @@
   width: 100%;
   position: relative;
 }
+
+.wavesContainer {
+  height: 50%;
+  top: 0;
+  left: 0;
+}
+
+.bodyContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bodySpacer {
+  height: 50%;
+}
+
+.contentContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  color: rgb(white, 0.6);
+}

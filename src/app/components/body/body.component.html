@@ -1,7 +1,7 @@
 <div class="bodyContainer">
   <div class="contentContainer flexColumn">
     <app-preferences
-      *ngIf="prefModalIsOpen"
+      data-ngIf="prefModalIsOpen"
       (handleColorChange)="handleColorChange($event)"
       (handleNameChange)="handleNameChange($event)"
       (toggleShowPrefModal)="toggleShowPrefModal()"

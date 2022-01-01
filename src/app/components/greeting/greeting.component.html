@@ -1,11 +1,14 @@
 <div class="flexColumn container">
-  <p class="greeting">
+  <p class="greeting" [style.visibility]="greeting ? 'visible' : 'hidden'">
     <span>{{ greeting }}</span>
     <span *ngIf="preferences?.name">,&nbsp;{{ preferences?.name }}</span>
   </p>
-  <span class="dateAndTime">
+  <p
+    class="dateAndTime"
+    [style.visibility]="weekday && date && time ? 'visible' : 'hidden'"
+  >
     <span>{{ weekday }}&nbsp;|&nbsp;</span>
     <span>{{ date }}&nbsp;|&nbsp;</span>
     <span>{{ time }}</span>
-  </span>
+  </p>
 </div>

@@ -2,11 +2,16 @@
   align-items: center;
 }
 
-.greeting {
+p {
   text-align: center;
-  margin: 0.5rem 0;
+}
+
+.greeting {
+  margin: 0.2rem 0;
+  font-weight: 300;
 }
 
 .dateAndTime {
-  text-align: center;
+  font-size: 1.8rem;
+  margin: 0;
 }

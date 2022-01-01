@@ -1,0 +1,19 @@
+<ul class="bookmarksList">
+  <li
+    *ngFor="let bookmark of arr"
+    class="bookmarksListItem"
+    [style.border]="bookmark.active ? '1px solid' : 'none'"
+    [style.border-color]="bookmark.color"
+  >
+    <fa-icon
+      class="bookmarksListIcon"
+      [style.color]="bookmark.active ? bookmark.color : 'inherit'"
+      [icon]="bookmark.icon"
+    ></fa-icon>
+    <div class="inputFieldContainer">
+      <span>URL</span>
+      <input class="textInput" type="text" value="something" />
+    </div>
+    <fa-icon [icon]="faEdit"></fa-icon>
+  </li>
+</ul>

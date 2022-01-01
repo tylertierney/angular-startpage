@@ -1,0 +1,53 @@
+:host {
+  width: 100%;
+}
+
+.bookmarksList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.bookmarksListItem {
+  padding: 0.3rem 0 0.3rem 0.6rem;
+  width: 100%;
+  height: 3rem;
+  //   border: solid white 1px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 0.8rem 0;
+  background-color: #121010;
+  //   border: 1px solid rgba(35, 210, 226, 0.67);
+}
+
+.bookmarksListIcon {
+  font-size: 2rem;
+}
+
+.bookmarksListItem span {
+  font-size: small;
+  margin-right: 6px;
+}
+
+.inputFieldContainer {
+  width: 64%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  input {
+    border-width: 1px;
+    border-color: rgb(white, 0.2);
+    font-size: small;
+    flex-grow: 1;
+  }
+}
+
+.bookmarksListItem.active .bookmarksListIcon {
+  color: lightskyblue;
+}

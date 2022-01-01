@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-import * as convert from 'color-convert';
+import { PreferencesInterface } from 'src/app/services/userpreferences.service';
 
 @Component({
   selector: 'app-preferences',
@@ -10,24 +10,13 @@ import * as convert from 'color-convert';
 export class PreferencesComponent implements OnInit {
   @Output() toggleShowPrefModal = new EventEmitter();
   @Output() handleColorChange = new EventEmitter();
-  @Input() preferences: any;
+  @Input() preferences: PreferencesInterface | null;
 
   faCog = faCog;
 
   constructor() {}
 
-  ngOnInit(): void {
-    // if (this.preferences) {
-    //   const darkColor = this.preferences.darkColor;
-    //   if (darkColor[0] === 'v') {
-    //     const colorAsString = getComputedStyle(
-    //       document.documentElement
-    //     ).getPropertyValue('--darkColor');
-    //     console.log(colorAsString);
-    //     // console.log(convert.hsl.hex());
-    //   }
-    // }
-  }
+  ngOnInit(): void {}
 
   onClick() {
     this.toggleShowPrefModal.emit();
@@ -36,15 +25,6 @@ export class PreferencesComponent implements OnInit {
   stopPropagation(e: Event): void {
     e.stopPropagation();
   }
-
-  // handleColorChange(e: any): void {
-
-  //   localStorage.setItem(
-  //     'startpage-info',
-  //     JSON.stringify({ darkColor: e.target.value })
-  //   );
-  //   console.log(this.preferences);
-  // }
 
   onColorChange(e: any) {
     this.handleColorChange.emit(e);

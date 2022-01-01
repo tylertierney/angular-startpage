@@ -8,3 +8,13 @@
   align-items: center;
   padding: 5px;
 }
+
+.settingsBtn:hover {
+  opacity: 0.9;
+}
+
+.settingsBtn:active {
+  transition: 0.1s ease-in-out;
+  opacity: 0.9;
+  transform: translate(3%, 3%);
+}

@@ -7,7 +7,7 @@
       [preferences]="preferences"
     ></app-preferences>
     <app-toolbar (toggleShowPrefModal)="toggleShowPrefModal()"></app-toolbar>
-    <app-greeting></app-greeting>
+    <app-greeting [preferences]="preferences"></app-greeting>
   </div>
 
   <div class="bodySpacer"></div>

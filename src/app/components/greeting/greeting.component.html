@@ -1,1 +1,11 @@
-<p>greeting works!</p>
+<div class="flexColumn container">
+  <p class="greeting">
+    <span>{{ greeting }}</span>
+    <span *ngIf="preferences?.name">,&nbsp;{{ preferences?.name }}</span>
+  </p>
+  <span class="dateAndTime">
+    <span>{{ weekday }}&nbsp;|&nbsp;</span>
+    <span>{{ date }}&nbsp;|&nbsp;</span>
+    <span>{{ time }}</span>
+  </span>
+</div>

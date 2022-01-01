@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
 import { PreferencesModalService } from './services/preferences-modal.service';
+import { GreetingComponent } from './components/greeting/greeting.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { PreferencesModalService } from './services/preferences-modal.service';
     BodyComponent,
     ToolbarComponent,
     PreferencesComponent,
+    GreetingComponent,
   ],
   imports: [BrowserModule, FontAwesomeModule],
   providers: [PreferencesModalService],

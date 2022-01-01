@@ -24,25 +24,29 @@ export class UserpreferencesService {
     if (infoFromLocalStorage) {
       this.userPreferencesStore.next(JSON.parse(infoFromLocalStorage));
     } else {
+      // localStorage.setItem(
+      //   'startpage-info',
+      //   JSON.stringify({ darkColor: 'var(--darkColor)' })
+      // );
       localStorage.setItem(
         'startpage-info',
-        JSON.stringify({ darkColor: '#14143d' })
+        JSON.stringify({ darkColor: '#141111' })
       );
     }
 
     return null;
   };
 
-  changeDarkColor = () => {
-    let copyOfPrefs: PreferencesInterface = { ...this.userPreferences };
-    if (copyOfPrefs == null) {
-      return null;
-    }
+  // changeDarkColor = () => {
+  //   let copyOfPrefs: PreferencesInterface = { ...this.userPreferences };
+  //   if (copyOfPrefs == null) {
+  //     return null;
+  //   }
 
-    copyOfPrefs.darkColor = 'blue';
+  //   copyOfPrefs.darkColor = 'blue';
 
-    this.userPreferencesStore.next(copyOfPrefs);
+  //   this.userPreferencesStore.next(copyOfPrefs);
 
-    return null;
-  };
+  //   return null;
+  // };
 }

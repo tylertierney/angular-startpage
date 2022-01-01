@@ -6,19 +6,17 @@ import { BodyComponent } from './components/body/body.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
+import { PreferencesModalService } from './services/preferences-modal.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     ToolbarComponent,
-    PreferencesComponent
+    PreferencesComponent,
   ],
-  imports: [
-    BrowserModule,
-    FontAwesomeModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FontAwesomeModule],
+  providers: [PreferencesModalService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

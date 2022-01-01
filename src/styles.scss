@@ -1,8 +1,13 @@
 :root {
   box-sizing: border-box;
-  --hueValue: 240;
-  --darkColor: hsl(var(--hueValue), 9%, 9%);
-  --lightColor: hsl(var(--hueValue), 8%, 17%);
+  font-family: "Readex Pro", sans-serif;
+  --hueValue: 0;
+  // --darkColor: hsl(var(--hueValue), 9%, 9%);
+  // --lightColor: hsl(var(--hueValue), 8%, 17%);
+  --darkColor: #141111;
+  --lightColor: #302828;
+  --textColor: rgb(255, 255, 255, 0.6);
+  --headerTextColor: rgb(255, 255, 255, 0.8);
 }
 
 body {
@@ -14,8 +19,17 @@ body {
   overflow: hidden;
 }
 
+.flexRow {
+  display: flex;
+  align-items: center;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
 .wavesContainer {
-  // background-color: var(--darkColor);
   height: 50%;
   top: 0;
   left: 0;
@@ -41,7 +55,7 @@ body {
   background-color: transparent;
   border: none;
   color: white;
-  opacity: 0.4;
+  opacity: 0.2;
   border-radius: 10px;
   font-size: 1.4rem;
   outline: none;

@@ -1,3 +1,34 @@
-<div class="preferencesOverlay">
-  <div class="preferencesModal">hello</div>
+<div class="preferencesOverlay" (click)="onClick()">
+  <div class="flexColumn preferencesModal" (click)="stopPropagation($event)">
+    <div class="flexRow header">
+      <div class="flexRow title">
+        <fa-icon [icon]="faCog" [style.font-size]="'1.3rem'"></fa-icon>
+        <h2>Preferences</h2>
+      </div>
+    </div>
+    <div class="flexColumn content">
+      <div class="flexRow formFields">
+        <label for="name">Name:</label>
+        <input
+          autocomplete="off"
+          id="color"
+          name="name"
+          maxlength="20"
+          class="textInput"
+        />
+      </div>
+      <div class="flexRow formFields">
+        <label for="color">Color:</label>
+        <input
+          name="color"
+          id="color"
+          class="colorInput"
+          type="color"
+          value="{{ preferences ? preferences.darkColor : '#000000' }}"
+          (input)="onColorChange($event)"
+        />
+        <!-- <button (click)="test()">test</button> -->
+      </div>
+    </div>
+  </div>
 </div>

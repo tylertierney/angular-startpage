@@ -1,13 +1,18 @@
 <div class="bodyContainer">
   <div class="contentContainer">
-    <app-toolbar></app-toolbar>
+    <app-preferences
+      (handleColorChange)="handleColorChange($event)"
+      (toggleShowPrefModal)="toggleShowPrefModal()"
+      [preferences]="preferences"
+    ></app-preferences>
+    <app-toolbar (toggleShowPrefModal)="toggleShowPrefModal()"></app-toolbar>
   </div>
-  <!-- <app-preferences></app-preferences> -->
+
   <div class="bodySpacer"></div>
   <div
     class="wavesContainer"
     [style.background-color]="
-      preferences ? preferences.darkColor : 'hsl(240, 9%, 9%)'
+      preferences ? preferences.darkColor : 'var(--darkColor)'
     "
   >
     <svg

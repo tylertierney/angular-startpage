@@ -22,7 +22,7 @@
         "
       >
         <div class="staticUrlField">
-          <span>{{ bookmark.url }}</span>
+          <span>{{ trimUrl(bookmark.url) }}</span>
         </div>
         <div class="inputFieldContainer">
           <span>URL</span>
@@ -33,6 +33,8 @@
             value="{{ bookmark.url }}"
             (input)="handleBookmarkUrlEdit(i, $event)"
             (change)="handleBookmarkUrlClose(i, $event)"
+            (focusout)="handleBookmarkUrlClose(i, $event)"
+            (keyup)="handleEnterKey(i, $event)"
           />
         </div>
       </div>

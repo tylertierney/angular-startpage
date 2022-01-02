@@ -23,7 +23,14 @@ export class BookmarksComponent implements OnInit {
 
   constructor(private userPrefService: UserpreferencesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (!this.preferences?.bookmarks) {
+      return;
+    }
+    for (let bookmark of this.preferences.bookmarks) {
+      bookmark.isEditing = false;
+    }
+  }
 
   handleListItemClick(index: number) {
     const bookmarks = this.preferences?.bookmarks;
@@ -45,6 +52,12 @@ export class BookmarksComponent implements OnInit {
     bookmarks[index].url = (e.target as HTMLInputElement).value;
     this.handleBookmarksChange(bookmarks);
     return null;
+  }
+
+  handleEnterKey(index: number, e: KeyboardEvent) {
+    if (e.code === 'Enter') {
+      this.handleBookmarkUrlClose(index, e);
+    }
   }
 
   handleBookmarkUrlClose(index: number, e: Event) {
@@ -78,5 +91,11 @@ export class BookmarksComponent implements OnInit {
 
   handleBookmarksChange(bookmarks: BookmarkInterface[]): void {
     this.userPrefService.updateCurrentPrefs('bookmarks', bookmarks);
+  }
+
+  trimUrl(url: string) {
+    let firstPeriod = url.indexOf('https://');
+    let trimmedUrl = url.substring(firstPeriod + 8, url.length);
+    return trimmedUrl;
   }
 }

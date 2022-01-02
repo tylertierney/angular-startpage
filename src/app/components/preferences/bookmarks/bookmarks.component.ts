@@ -47,6 +47,21 @@ export class BookmarksComponent implements OnInit {
     return null;
   }
 
+  handleBookmarkUrlClose(index: number, e: Event) {
+    if (this.preferences == null) {
+      return null;
+    }
+    if (
+      this.preferences.bookmarks == null ||
+      this.preferences.bookmarks == undefined
+    ) {
+      return null;
+    }
+
+    this.preferences.bookmarks[index].isEditing = false;
+    return null;
+  }
+
   stopPropagation(e: Event) {
     e.stopPropagation();
   }

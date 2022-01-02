@@ -1,7 +1,7 @@
 <div class="bodyContainer">
   <div class="contentContainer flexColumn">
     <app-preferences
-      data-ngIf="prefModalIsOpen"
+      *ngIf="prefModalIsOpen"
       (handleColorChange)="handleColorChange($event)"
       (handleNameChange)="handleNameChange($event)"
       (toggleShowPrefModal)="toggleShowPrefModal()"
@@ -9,6 +9,7 @@
     ></app-preferences>
     <app-toolbar (toggleShowPrefModal)="toggleShowPrefModal()"></app-toolbar>
     <app-greeting [preferences]="preferences"></app-greeting>
+    <app-bookmarksgrid [preferences]="preferences"></app-bookmarksgrid>
   </div>
 
   <div class="bodySpacer"></div>

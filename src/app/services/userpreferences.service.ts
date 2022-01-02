@@ -1,10 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { placeholderBookmarks } from '../placeholderBookmarks';
+
+export interface BookmarkInterface {
+  name: string;
+  icon: IconDefinition;
+  url: string;
+  color: string;
+  active: boolean;
+  isEditing?: boolean;
+}
 
 export interface PreferencesInterface {
   name?: string;
   darkColor?: string;
-  links?: any[];
+  bookmarks?: BookmarkInterface[];
+  showBookmarkColors?: boolean;
 }
 
 @Injectable({
@@ -19,21 +31,29 @@ export class UserpreferencesService {
   constructor() {}
 
   getInitialPrefsFromLocalStorage = () => {
+    const defaultPrefs = {
+      name: 'friend!',
+      darkColor: '#1b1b1b',
+      bookmarks: placeholderBookmarks,
+      showBookmarkColors: true,
+    };
+
     let infoFromLocalStorage = localStorage.getItem('startpage-info');
 
     if (infoFromLocalStorage) {
       this.userPreferencesStore.next(JSON.parse(infoFromLocalStorage));
     } else {
-      localStorage.setItem(
-        'startpage-info',
-        JSON.stringify({ darkColor: '#141111', name: '' })
-      );
+      localStorage.setItem('startpage-info', JSON.stringify(defaultPrefs));
+      this.userPreferencesStore.next(defaultPrefs);
     }
 
     return null;
   };
 
-  updateCurrentPrefs = (property: string, newValue: string) => {
+  updateCurrentPrefs = (
+    property: string,
+    newValue: string | BookmarkInterface[]
+  ) => {
     let infoFromLocalStorage = localStorage.getItem('startpage-info');
 
     if (infoFromLocalStorage) {
@@ -41,6 +61,7 @@ export class UserpreferencesService {
       asObject[property] = newValue;
       localStorage.setItem('startpage-info', JSON.stringify(asObject));
       this.userPreferencesStore.next(asObject);
+      console.log(asObject.bookmarks);
     }
   };
 }

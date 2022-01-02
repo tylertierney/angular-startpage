@@ -18,11 +18,15 @@
   padding: 0;
   width: 100%;
   margin: 0.2rem 0 1rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 .bookmarksListItem {
   padding: 0.3rem 0 0.3rem 0rem;
-  width: 100%;
+  width: 95%;
   height: 3rem;
   border-radius: 10px;
   display: flex;
@@ -97,6 +101,12 @@
   align-items: center;
   user-select: none;
   color: rgb(white, 0.4);
+}
+
+.staticUrlField span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bookmarksListItem.active .bookmarksListIcon {

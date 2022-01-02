@@ -1,7 +1,7 @@
 <p class="instructionsText">Click to activate</p>
 <ul class="bookmarksList">
   <li
-    *ngFor="let bookmark of arr; let i = index"
+    *ngFor="let bookmark of preferences?.bookmarks; let i = index"
     (click)="handleListItemClick(i)"
     class="bookmarksListItem"
     [style.border]="'1px solid'"
@@ -28,7 +28,8 @@
             (click)="stopPropagation($event)"
             class="textInput"
             type="text"
-            value="something"
+            value="{{ bookmark.url }}"
+            (input)="handleBookmarkUrlEdit(i, $event)"
           />
         </div>
       </div>

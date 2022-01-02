@@ -1,64 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {
-  faFacebook,
-  faGithub,
-  faLinkedin,
-  faReddit,
-  faRedditAlien,
-} from '@fortawesome/free-brands-svg-icons';
+  PreferencesInterface,
+  UserpreferencesService,
+} from 'src/app/services/userpreferences.service';
+import { Subscription } from 'rxjs';
 
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
+import { BookmarkInterface } from 'src/app/services/userpreferences.service';
 
 @Component({
   selector: 'app-bookmarks',
   templateUrl: './bookmarks.component.html',
   styleUrls: ['./bookmarks.component.scss'],
+  providers: [UserpreferencesService],
 })
 export class BookmarksComponent implements OnInit {
+  subscription: Subscription;
   isEditing: boolean = false;
   faEdit = faEdit;
+  @Input() preferences: PreferencesInterface | null;
 
-  arr: any[] = [
-    {
-      name: 'Linkedin',
-      icon: faLinkedin,
-      url: 'https://www.linkedin.com',
-      color: '#2867B2',
-      active: true,
-      isEditing: false,
-    },
-    {
-      name: 'Github',
-      icon: faGithub,
-      url: 'https://www.github.com',
-      color: 'white',
-      active: true,
-      isEditing: false,
-    },
-    {
-      name: 'Facebook',
-      icon: faFacebook,
-      url: 'https://www.facebook.com',
-      color: '#4267B2',
-      active: false,
-      isEditing: false,
-    },
-    {
-      name: 'Reddit',
-      icon: faRedditAlien,
-      url: 'https://www.reddit.com',
-      color: '#FF4500',
-      active: true,
-      isEditing: false,
-    },
-  ];
-
-  constructor() {}
+  constructor(private userPrefService: UserpreferencesService) {}
 
   ngOnInit(): void {}
 
   handleListItemClick(index: number) {
-    this.arr[index].active = !this.arr[index].active;
+    const bookmarks = this.preferences?.bookmarks;
+    if (bookmarks == null) {
+      return null;
+    }
+    bookmarks[index].active = !bookmarks[index].active;
+    this.handleBookmarksChange(bookmarks);
+
+    return null;
+  }
+
+  handleBookmarkUrlEdit(index: number, e: Event) {
+    const bookmarks = this.preferences?.bookmarks;
+    if (bookmarks == null) {
+      return null;
+    }
+
+    bookmarks[index].url = (e.target as HTMLInputElement).value;
+    this.handleBookmarksChange(bookmarks);
+    return null;
   }
 
   stopPropagation(e: Event) {
@@ -66,7 +52,16 @@ export class BookmarksComponent implements OnInit {
   }
 
   turnOnEditing(index: number, e: Event) {
-    this.arr[index].isEditing = !this.arr[index].isEditing;
+    const bookmarks = this.preferences?.bookmarks;
+    if (bookmarks == null) {
+      return null;
+    }
+    bookmarks[index].isEditing = !bookmarks[index].isEditing;
     e.stopPropagation();
+    return null;
+  }
+
+  handleBookmarksChange(bookmarks: BookmarkInterface[]): void {
+    this.userPrefService.updateCurrentPrefs('bookmarks', bookmarks);
   }
 }

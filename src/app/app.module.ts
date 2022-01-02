@@ -9,6 +9,7 @@ import { PreferencesComponent } from './components/preferences/preferences.compo
 import { PreferencesModalService } from './services/preferences-modal.service';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { BookmarksComponent } from './components/preferences/bookmarks/bookmarks.component';
+import { BookmarksgridComponent } from './components/bookmarksgrid/bookmarksgrid.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BookmarksComponent } from './components/preferences/bookmarks/bookmarks
     PreferencesComponent,
     GreetingComponent,
     BookmarksComponent,
+    BookmarksgridComponent,
   ],
   imports: [BrowserModule, FontAwesomeModule],
   providers: [PreferencesModalService],

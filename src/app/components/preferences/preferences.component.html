@@ -13,7 +13,6 @@
           autocomplete="off"
           id="color"
           name="name"
-          maxlength="20"
           class="textInput"
           value="{{ name ? name : '' }}"
           (input)="onNameChange($event)"
@@ -31,7 +30,7 @@
         />
         <!-- <button (click)="test()">test</button> -->
       </div>
-      <app-bookmarks></app-bookmarks>
+      <app-bookmarks [preferences]="preferences"></app-bookmarks>
     </div>
   </div>
 </div>

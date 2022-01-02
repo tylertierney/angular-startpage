@@ -1,0 +1,15 @@
+<div class="gridContainer">
+  <a
+    #link
+    *ngFor="let bookmark of preferences?.bookmarks"
+    class="gridItem"
+    target="_blank"
+    href="{{ bookmark.url }}"
+    (mouseover)="link.style.color = bookmark.color"
+    (mouseout)="link.style.color = 'inherit'"
+    [style.display]="bookmark.active ? 'flex' : 'none'"
+  >
+    <fa-icon class="bookmarkIcon" [icon]="bookmark.icon"></fa-icon>
+  </a>
+</div>
+<!-- <button (click)="test()">test</button> -->

@@ -3,6 +3,7 @@ import { UserpreferencesService } from 'src/app/services/userpreferences.service
 import { Subscription } from 'rxjs';
 import { PreferencesInterface } from '../../services/userpreferences.service';
 import { PreferencesModalService } from 'src/app/services/preferences-modal.service';
+// import { BookmarkInterface } from 'src/app/services/userpreferences.service';
 
 @Component({
   selector: 'app-body',
@@ -32,7 +33,6 @@ export class BodyComponent implements OnInit {
   }
 
   toggleShowPrefModal(): void {
-    console.log(this.preferences);
     this._preferencesModalService.togglePrefModalShowing();
   }
 
@@ -49,4 +49,8 @@ export class BodyComponent implements OnInit {
       (e.target as HTMLInputElement).value
     );
   }
+
+  // handleBookmarksChange(bookmarks: BookmarkInterface[]): void {
+  //   this.userPrefService.updateCurrentPrefs('bookmarks', bookmarks);
+  // }
 }

@@ -1,14 +1,15 @@
 <div class="bodyContainer">
+  <app-toolbar (toggleShowPrefModal)="toggleShowPrefModal()"></app-toolbar>
+  <app-preferences
+    *ngIf="prefModalIsOpen"
+    (handleColorChange)="handleColorChange($event)"
+    (handleNameChange)="handleNameChange($event)"
+    (toggleShowPrefModal)="toggleShowPrefModal()"
+    [preferences]="preferences"
+  ></app-preferences>
   <div class="contentContainer flexColumn">
-    <app-preferences
-      *ngIf="prefModalIsOpen"
-      (handleColorChange)="handleColorChange($event)"
-      (handleNameChange)="handleNameChange($event)"
-      (toggleShowPrefModal)="toggleShowPrefModal()"
-      [preferences]="preferences"
-    ></app-preferences>
-    <app-toolbar (toggleShowPrefModal)="toggleShowPrefModal()"></app-toolbar>
     <app-greeting [preferences]="preferences"></app-greeting>
+    <app-searchbar></app-searchbar>
     <app-bookmarksgrid [preferences]="preferences"></app-bookmarksgrid>
   </div>
 

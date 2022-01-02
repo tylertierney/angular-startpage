@@ -44,9 +44,30 @@
   font-size: 3rem;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 840px) {
   .gridItem {
     width: 8rem;
     height: 6rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .gridItem {
+    width: 7rem;
+    height: 5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .bookmarkIcon {
+    font-size: 2.6rem;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .gridItem {
+    width: 5rem;
+    height: 4rem;
+  }
+
+  .bookmarkIcon {
+    font-size: 2.2rem;
   }
 }

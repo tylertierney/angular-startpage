@@ -35,7 +35,7 @@ export class UserpreferencesService {
       name: 'friend!',
       darkColor: '#1b1b1b',
       bookmarks: placeholderBookmarks,
-      showBookmarkColors: true,
+      showBookmarkColors: false,
     };
 
     let infoFromLocalStorage = localStorage.getItem('startpage-info');
@@ -61,7 +61,6 @@ export class UserpreferencesService {
       asObject[property] = newValue;
       localStorage.setItem('startpage-info', JSON.stringify(asObject));
       this.userPreferencesStore.next(asObject);
-      console.log(asObject.bookmarks);
     }
   };
 }

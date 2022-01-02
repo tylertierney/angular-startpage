@@ -6,11 +6,19 @@
   justify-content: flex-start;
 }
 
-.instructionsText {
+.instructionsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin: 0.5rem 0;
+}
+
+.instructionsText {
   font-weight: 200;
   font-size: small;
   user-select: none;
+  margin: 0;
 }
 
 .bookmarksList {

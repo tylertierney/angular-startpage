@@ -52,7 +52,7 @@ export class UserpreferencesService {
 
   updateCurrentPrefs = (
     property: string,
-    newValue: string | BookmarkInterface[]
+    newValue: string | BookmarkInterface[] | boolean
   ) => {
     let infoFromLocalStorage = localStorage.getItem('startpage-info');
 

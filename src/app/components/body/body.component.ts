@@ -50,7 +50,13 @@ export class BodyComponent implements OnInit {
     );
   }
 
-  // handleBookmarksChange(bookmarks: BookmarkInterface[]): void {
-  //   this.userPrefService.updateCurrentPrefs('bookmarks', bookmarks);
-  // }
+  handleShowBookmarkColors(e: Event): void {
+    let newValue = false;
+
+    if ((e.target as HTMLInputElement).value === 'false') {
+      newValue = true;
+    }
+
+    this.userPrefService.updateCurrentPrefs('showBookmarkColors', newValue);
+  }
 }

@@ -11,6 +11,7 @@ export class PreferencesComponent implements OnInit {
   @Output() toggleShowPrefModal = new EventEmitter();
   @Output() handleColorChange = new EventEmitter();
   @Output() handleNameChange = new EventEmitter();
+  @Output() handleShowBookmarkColors = new EventEmitter();
   @Input() preferences: PreferencesInterface | null;
   name: string | undefined;
   darkColor: string | undefined;
@@ -38,5 +39,9 @@ export class PreferencesComponent implements OnInit {
 
   onNameChange(e: Event) {
     this.handleNameChange.emit(e);
+  }
+
+  onShowColorChange(e: Event) {
+    this.handleShowBookmarkColors.emit(e);
   }
 }

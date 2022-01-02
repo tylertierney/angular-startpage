@@ -8,27 +8,41 @@
     </div>
     <div class="flexColumn content">
       <div class="flexRow formFields">
-        <label for="name">Name</label>
-        <input
-          autocomplete="off"
-          id="color"
-          name="name"
-          class="textInput"
-          value="{{ name ? name : '' }}"
-          (input)="onNameChange($event)"
-        />
+        <div class="nameInputContainer">
+          <label for="name">Name</label>
+          <input
+            autocomplete="off"
+            id="color"
+            name="name"
+            class="textInput"
+            value="{{ name ? name : '' }}"
+            (input)="onNameChange($event)"
+          />
+        </div>
       </div>
       <div class="flexRow formFields">
-        <label for="color">Color</label>
-        <input
-          name="color"
-          id="color"
-          class="colorInput"
-          type="color"
-          value="{{ darkColor ? darkColor : '#000000' }}"
-          (input)="onColorChange($event)"
-        />
-        <!-- <button (click)="test()">test</button> -->
+        <div class="flexRow colorInputContainer">
+          <label for="color">Color</label>
+          <input
+            name="color"
+            id="color"
+            class="colorInput"
+            type="color"
+            value="{{ darkColor ? darkColor : '#000000' }}"
+            (input)="onColorChange($event)"
+          />
+        </div>
+        <div class="flexRow colorInputContainer showColorsContainer">
+          <label for="showColors">Show icon colors?</label>
+          <input
+            name="showColors"
+            id="showColors"
+            class="showColorsInput"
+            type="checkbox"
+            value="{{ preferences?.showBookmarkColors }}"
+            (input)="onShowColorChange($event)"
+          />
+        </div>
       </div>
       <app-bookmarks [preferences]="preferences"></app-bookmarks>
     </div>

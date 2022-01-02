@@ -6,10 +6,14 @@
     target="_blank"
     href="{{ bookmark.url }}"
     (mouseover)="link.style.color = bookmark.color"
-    (mouseout)="link.style.color = 'inherit'"
+    (mouseout)="
+      preferences?.showBookmarkColors
+        ? (link.style.color = bookmark.color)
+        : (link.style.color = 'inherit')
+    "
     [style.display]="bookmark.active ? 'flex' : 'none'"
+    [style.color]="preferences?.showBookmarkColors ? bookmark.color : 'inherit'"
   >
     <fa-icon class="bookmarkIcon" [icon]="bookmark.icon"></fa-icon>
   </a>
 </div>
-<!-- <button (click)="test()">test</button> -->

@@ -51,8 +51,9 @@
       margin: 0 0 1rem 0;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
+      flex-wrap: wrap;
 
       .textInput {
         max-width: 300px;
@@ -68,17 +69,13 @@
         user-select: none;
       }
 
-      .showColorsContainer {
-        margin-right: 1rem;
-      }
-
       .showColorsInput {
         appearance: none;
         background-color: transparent;
         margin: 0;
         color: blue;
-        width: 2rem;
-        height: 1.95rem;
+        width: 1.8rem;
+        height: 1.8rem;
         border: 2px solid var(--textColor);
         border-radius: 5px;
         cursor: pointer;
@@ -109,6 +106,10 @@
       .showColorsInput:checked::after {
         // content: "";
         transform: scale(1) translate(15%, -25%) rotate(-45deg);
+      }
+
+      .colorInputContainer {
+        margin-right: 2rem;
       }
 
       .colorInput {

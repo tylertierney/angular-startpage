@@ -7,10 +7,6 @@
 .wavesContainer {
   height: 50%;
   width: 110%;
-  // top: 0;
-  // left: 0;
-  // outline: 2px solid;
-  // border: 2px solid;
 }
 
 .bodyContainer {
@@ -20,11 +16,11 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .bodySpacer {
   height: 55%;
-  // visibility: hidden;
 }
 
 .contentContainer {

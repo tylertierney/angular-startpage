@@ -16,13 +16,15 @@
   >
     <div
       class="iconFromLocalContainer"
-      [style.width]="bookmark.name === 'Disney Plus' ? '6rem' : '3rem'"
+      [style.width]="determineIconSizeForLocalSvg(bookmark.name).width"
+      [style.height]="determineIconSizeForLocalSvg(bookmark.name).height"
       *ngIf="bookmark.localSvg; else faIcon"
     >
       <app-svgcomponent
         [type]="bookmark.name"
         [title]="bookmark.name"
         [color]="bookmark.color"
+        [currentColor]="link.style.color"
       ></app-svgcomponent>
     </div>
     <ng-template #faIcon>

@@ -9,6 +9,7 @@ export class SvgcomponentComponent implements OnInit {
   @Input() type: string;
   @Input() title: string;
   @Input() color: string;
+  @Input() currentColor: string;
   maskUrl: string = '/assets/svg/netflix';
 
   constructor() {}

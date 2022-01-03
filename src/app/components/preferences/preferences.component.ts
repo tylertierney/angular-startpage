@@ -7,7 +7,7 @@ import {
   EventEmitter,
   SimpleChanges,
 } from '@angular/core';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faSync } from '@fortawesome/free-solid-svg-icons';
 import { PreferencesInterface } from 'src/app/services/userpreferences.service';
 
 @Component({
@@ -26,6 +26,7 @@ export class PreferencesComponent implements OnInit, OnChanges {
   showBookmarkColors: boolean | undefined;
 
   faCog = faCog;
+  faSync = faSync;
 
   constructor() {}
 
@@ -58,8 +59,11 @@ export class PreferencesComponent implements OnInit, OnChanges {
   }
 
   onShowColorChange(e: Event) {
-    // console.log(this.showBookmarkColors);
-    // this.showBookmarkColors = !this.showBookmarkColors;
     this.handleShowBookmarkColors.emit(e);
+  }
+
+  handleResetPrefs() {
+    localStorage.clear();
+    window.location.reload();
   }
 }

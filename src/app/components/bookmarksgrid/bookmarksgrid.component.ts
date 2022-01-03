@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { PreferencesInterface } from 'src/app/services/userpreferences.service';
 
 @Component({

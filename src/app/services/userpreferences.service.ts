@@ -10,6 +10,7 @@ export interface BookmarkInterface {
   color: string;
   active: boolean;
   isEditing?: boolean;
+  localSvg?: string | undefined | null;
 }
 
 export interface PreferencesInterface {

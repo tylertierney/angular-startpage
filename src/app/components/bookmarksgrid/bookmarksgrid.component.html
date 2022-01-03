@@ -14,6 +14,19 @@
     [style.display]="bookmark.active ? 'flex' : 'none'"
     [style.color]="preferences?.showBookmarkColors ? bookmark.color : 'inherit'"
   >
-    <fa-icon class="bookmarkIcon" [icon]="bookmark.icon"></fa-icon>
+    <div
+      class="iconFromLocalContainer"
+      [style.width]="bookmark.name === 'Disney Plus' ? '6rem' : '3rem'"
+      *ngIf="bookmark.localSvg; else faIcon"
+    >
+      <app-svgcomponent
+        [type]="bookmark.name"
+        [title]="bookmark.name"
+        [color]="bookmark.color"
+      ></app-svgcomponent>
+    </div>
+    <ng-template #faIcon>
+      <fa-icon class="bookmarkIcon" [icon]="bookmark.icon"></fa-icon>
+    </ng-template>
   </a>
 </div>

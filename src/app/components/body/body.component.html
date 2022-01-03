@@ -1,13 +1,21 @@
+<app-preferences
+  *ngIf="prefModalIsOpen"
+  (handleColorChange)="handleColorChange($event)"
+  (handleNameChange)="handleNameChange($event)"
+  (toggleShowPrefModal)="toggleShowPrefModal()"
+  (handleShowBookmarkColors)="handleShowBookmarkColors($event)"
+  [preferences]="preferences"
+></app-preferences>
 <div class="bodyContainer">
   <app-toolbar (toggleShowPrefModal)="toggleShowPrefModal()"></app-toolbar>
-  <app-preferences
+  <!-- <app-preferences
     *ngIf="prefModalIsOpen"
     (handleColorChange)="handleColorChange($event)"
     (handleNameChange)="handleNameChange($event)"
     (toggleShowPrefModal)="toggleShowPrefModal()"
     (handleShowBookmarkColors)="handleShowBookmarkColors($event)"
     [preferences]="preferences"
-  ></app-preferences>
+  ></app-preferences> -->
   <div class="contentContainer flexColumn">
     <app-greeting [preferences]="preferences"></app-greeting>
     <app-searchbar></app-searchbar>

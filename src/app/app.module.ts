@@ -12,6 +12,7 @@ import { BookmarksComponent } from './components/preferences/bookmarks/bookmarks
 import { BookmarksgridComponent } from './components/bookmarksgrid/bookmarksgrid.component';
 import { TabsComponent } from './components/preferences/tabs/tabs.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SvgcomponentComponent } from './components/svgcomponent/svgcomponent.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     BookmarksgridComponent,
     TabsComponent,
     SearchbarComponent,
+    SvgcomponentComponent,
   ],
   imports: [BrowserModule, FontAwesomeModule],
   providers: [PreferencesModalService],

@@ -22,7 +22,12 @@
         "
       >
         <div class="staticUrlField">
-          <span>{{ trimUrl(bookmark.url) }}</span>
+          <span
+            [style.color]="
+              bookmark.active ? 'rgb(255, 255, 255, 0.8)' : 'inherit'
+            "
+            >{{ trimUrl(bookmark.url) }}</span
+          >
         </div>
         <div class="inputFieldContainer">
           <span>URL</span>

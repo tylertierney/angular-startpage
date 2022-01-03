@@ -42,7 +42,9 @@ export class UserpreferencesService {
     let infoFromLocalStorage = localStorage.getItem('startpage-info');
 
     if (infoFromLocalStorage) {
-      this.userPreferencesStore.next(JSON.parse(infoFromLocalStorage));
+      const parsed = JSON.parse(infoFromLocalStorage);
+      this.setDarkColorCustomVar(parsed.darkColor);
+      this.userPreferencesStore.next(parsed);
     } else {
       localStorage.setItem('startpage-info', JSON.stringify(defaultPrefs));
       this.userPreferencesStore.next(defaultPrefs);
@@ -50,6 +52,10 @@ export class UserpreferencesService {
 
     return null;
   };
+
+  setDarkColorCustomVar(color: string) {
+    document.documentElement.style.setProperty('--darkColor', color);
+  }
 
   updateCurrentPrefs = (
     property: string,
@@ -60,6 +66,7 @@ export class UserpreferencesService {
     if (infoFromLocalStorage) {
       let asObject = JSON.parse(infoFromLocalStorage);
       asObject[property] = newValue;
+      this.setDarkColorCustomVar(asObject.darkColor);
       localStorage.setItem('startpage-info', JSON.stringify(asObject));
       this.userPreferencesStore.next(asObject);
     }

@@ -2,7 +2,7 @@
   box-sizing: border-box;
   font-family: "Readex Pro", sans-serif;
   --hueValue: 0;
-  --darkColor: #141111;
+  --darkColor: #1b1b1b;
   --lightColor: #302828;
   --textColor: rgb(255, 255, 255, 0.6);
   --headerTextColor: rgb(255, 255, 255, 0.8);
@@ -10,12 +10,18 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: 130vh;
   padding: 0;
   margin: 0;
-  background-color: var(--lightColor);
   overflow-y: scroll;
   overflow-x: hidden;
+  background: rgb(116, 116, 116);
+  background: linear-gradient(
+    0deg,
+    var(--darkColor) 33%,
+    var(--lightColor) 33%
+  );
 }
 
 body::-webkit-scrollbar {

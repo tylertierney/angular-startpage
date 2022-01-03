@@ -1,3 +1,9 @@
 # Customizable Browser Startpage
 
-Using this as an opportunity to explore more of Angular. This app provides an interface that allows users to generate and customize a browser startpage.
+I've been using this project as an opportunity to explore more of Angular, i.e. ng, services, directives, and observables.
+
+This app provides a simple interface that allows users to generate and customize a browser homepage.
+
+Users can choose from a number of preset 'bookmarks', change their name, and change whether the bookmark icons are colored.
+
+All user preferences are stored within the browser's localStorage object.

@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  Input,
+  Output,
+  EventEmitter,
+  SimpleChanges,
+} from '@angular/core';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { PreferencesInterface } from 'src/app/services/userpreferences.service';
 
@@ -7,7 +15,7 @@ import { PreferencesInterface } from 'src/app/services/userpreferences.service';
   templateUrl: './preferences.component.html',
   styleUrls: ['./preferences.component.scss'],
 })
-export class PreferencesComponent implements OnInit {
+export class PreferencesComponent implements OnInit, OnChanges {
   @Output() toggleShowPrefModal = new EventEmitter();
   @Output() handleColorChange = new EventEmitter();
   @Output() handleNameChange = new EventEmitter();
@@ -15,6 +23,7 @@ export class PreferencesComponent implements OnInit {
   @Input() preferences: PreferencesInterface | null;
   name: string | undefined;
   darkColor: string | undefined;
+  showBookmarkColors: boolean | undefined;
 
   faCog = faCog;
 
@@ -23,6 +32,13 @@ export class PreferencesComponent implements OnInit {
   ngOnInit(): void {
     this.name = this.preferences?.name;
     this.darkColor = this.preferences?.darkColor;
+    this.showBookmarkColors = this.preferences?.showBookmarkColors;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.showBookmarkColors =
+      changes['preferences'].currentValue.showBookmarkColors;
+    console.log(this.showBookmarkColors);
   }
 
   onClick() {
@@ -42,6 +58,8 @@ export class PreferencesComponent implements OnInit {
   }
 
   onShowColorChange(e: Event) {
+    // console.log(this.showBookmarkColors);
+    // this.showBookmarkColors = !this.showBookmarkColors;
     this.handleShowBookmarkColors.emit(e);
   }
 }

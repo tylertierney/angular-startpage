@@ -123,4 +123,12 @@ export const placeholderBookmarks: BookmarkInterface[] = [
     active: true,
     isEditing: false,
   },
+  {
+    name: 'Pinterest',
+    icon: faPinterest,
+    url: 'https://www.pinterest.com',
+    color: '#E60023',
+    active: true,
+    isEditing: false,
+  },
 ];

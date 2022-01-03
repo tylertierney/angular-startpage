@@ -39,6 +39,7 @@
             id="showColors"
             class="showColorsInput"
             type="checkbox"
+            [defaultChecked]="this.showBookmarkColors"
             value="{{ preferences?.showBookmarkColors }}"
             (input)="onShowColorChange($event)"
           />

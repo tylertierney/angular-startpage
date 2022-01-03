@@ -52,7 +52,7 @@ export class BodyComponent implements OnInit {
 
   handleShowBookmarkColors(e: Event): void {
     let newValue = false;
-
+    // console.log((e.target as HTMLInputElement).value);
     if ((e.target as HTMLInputElement).value === 'false') {
       newValue = true;
     }

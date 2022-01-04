@@ -23,6 +23,7 @@ export interface PreferencesInterface {
     name: string;
     url: string;
   };
+  displayNotification?: boolean;
 }
 
 @Injectable({
@@ -47,6 +48,7 @@ export class UserpreferencesService {
         name: 'Waves',
         url: '',
       },
+      displayNotification: false,
     };
 
     let infoFromLocalStorage = localStorage.getItem('startpage-info');

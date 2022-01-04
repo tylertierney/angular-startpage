@@ -12,6 +12,7 @@
   --bookmarkBgColor: rgb(18, 18, 18);
   --headerTextColor: rgb(255, 255, 255, 0.8);
   overflow-x: hidden;
+  background-color: var(--wavesColor);
 }
 
 body {
@@ -20,14 +21,13 @@ body {
   height: 110vh;
   padding: 0;
   margin: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
   background: rgb(116, 116, 116);
   background: linear-gradient(
     0deg,
     var(--wavesColor) 33%,
     var(--lightColor) 33%
   );
+  // overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {

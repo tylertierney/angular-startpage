@@ -15,7 +15,8 @@ export interface BookmarkInterface {
 
 export interface PreferencesInterface {
   name?: string;
-  darkColor?: string;
+  wavesColor?: string;
+  greetingTextColor?: string;
   bookmarks?: BookmarkInterface[];
   showBookmarkColors?: boolean;
 }
@@ -34,7 +35,8 @@ export class UserpreferencesService {
   getInitialPrefsFromLocalStorage = () => {
     const defaultPrefs = {
       name: 'friend!',
-      darkColor: '#1b1b1b',
+      wavesColor: '#1b1b1b',
+      greetingTextColor: '#b4b4b4',
       bookmarks: placeholderBookmarks,
       showBookmarkColors: false,
     };
@@ -43,7 +45,8 @@ export class UserpreferencesService {
 
     if (infoFromLocalStorage) {
       const parsed = JSON.parse(infoFromLocalStorage);
-      this.setDarkColorCustomVar(parsed.darkColor);
+      this.setCustomColorVar('--wavesColor', parsed.wavesColor);
+      this.setCustomColorVar('--greetingTextColor', parsed.greetingTextColor);
       this.userPreferencesStore.next(parsed);
     } else {
       localStorage.setItem('startpage-info', JSON.stringify(defaultPrefs));
@@ -53,8 +56,9 @@ export class UserpreferencesService {
     return null;
   };
 
-  setDarkColorCustomVar(color: string) {
-    document.documentElement.style.setProperty('--darkColor', color);
+  setCustomColorVar(property: string, color: string) {
+    console.log(property, color);
+    document.documentElement.style.setProperty('--wavesColor', color);
   }
 
   updateCurrentPrefs = (
@@ -66,7 +70,8 @@ export class UserpreferencesService {
     if (infoFromLocalStorage) {
       let asObject = JSON.parse(infoFromLocalStorage);
       asObject[property] = newValue;
-      this.setDarkColorCustomVar(asObject.darkColor);
+      this.setCustomColorVar('--wavesColor', asObject.wavesColor);
+      this.setCustomColorVar('--greetingTextColor', asObject.greetingTextColor);
       localStorage.setItem('startpage-info', JSON.stringify(asObject));
       this.userPreferencesStore.next(asObject);
     }

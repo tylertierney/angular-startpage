@@ -1,4 +1,7 @@
-<div class="flexColumn container">
+<div
+  [style.color]="preferences?.greetingTextColor"
+  class="flexColumn container"
+>
   <p class="greeting" [style.visibility]="greeting ? 'visible' : 'hidden'">
     <span>{{ greeting }}</span>
     <span *ngIf="preferences?.name">,&nbsp;{{ preferences?.name }}</span>

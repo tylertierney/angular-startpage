@@ -21,15 +21,26 @@
         </div>
       </div>
       <div class="flexRow formFields">
-        <div class="flexRow colorInputContainer">
-          <label for="color">Color</label>
+        <!-- <div class="flexRow colorInputContainer">
+          <label for="wavesColorInput">Waves Color</label>
           <input
-            name="color"
-            id="color"
+            name="wavesColorInput"
+            id="wavesColorInput"
             class="colorInput"
             type="color"
-            value="{{ darkColor ? darkColor : '#000000' }}"
-            (input)="onColorChange($event)"
+            value="{{ wavesColor ? wavesColor : '#000000' }}"
+            (input)="onColorChange($event, 'wavesColor')"
+          />
+        </div> -->
+        <div class="flexRow colorInputContainer">
+          <label for="textColorInput">Text Color</label>
+          <input
+            name="textColorInput"
+            id="textColorInput"
+            class="colorInput"
+            type="color"
+            value="{{ greetingTextColor ? greetingTextColor : '#000000' }}"
+            (input)="onColorChange($event, 'greetingTextColor')"
           />
         </div>
         <div class="flexRow colorInputContainer showColorsContainer">
@@ -44,6 +55,17 @@
             (input)="onShowColorChange($event)"
           />
         </div>
+      </div>
+      <div class="flexRow formFields colorInputContainer">
+        <label for="wavesColorInput">Waves Color</label>
+        <input
+          name="wavesColorInput"
+          id="wavesColorInput"
+          class="colorInput"
+          type="color"
+          value="{{ wavesColor ? wavesColor : '#000000' }}"
+          (input)="onColorChange($event, 'wavesColor')"
+        />
       </div>
       <app-bookmarks [preferences]="preferences"></app-bookmarks>
       <div class="resetSectionContainer">

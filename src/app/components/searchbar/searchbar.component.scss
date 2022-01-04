@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  border: 2px solid var(--textColor);
+  border: 2px solid var(--searchbarColor);
   padding: 3px 0.2rem;
   opacity: 0.8;
   border-radius: 4px;
@@ -33,8 +33,8 @@
     height: 100%;
     background-color: transparent;
     border: none;
-    color: inherit;
-    font-size: inherit;
+    color: var(--greetingTextColor);
+    font-size: 1.2rem;
     padding-left: 1rem;
     display: flex;
     align-items: center;
@@ -48,9 +48,9 @@
     width: 15%;
     height: 100%;
     cursor: pointer;
-    background-color: var(--textColor);
+    background-color: var(--searchbarColor);
     border: none;
-    color: var(--lightColor);
+    color: black;
     font-size: inherit;
     padding: 0 0.5rem;
   }

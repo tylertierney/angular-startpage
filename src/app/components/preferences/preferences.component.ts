@@ -17,12 +17,17 @@ import { PreferencesInterface } from 'src/app/services/userpreferences.service';
 })
 export class PreferencesComponent implements OnInit, OnChanges {
   @Output() toggleShowPrefModal = new EventEmitter();
-  @Output() handleColorChange = new EventEmitter();
+  // @Output() handleColorChange = new EventEmitter();
   @Output() handleNameChange = new EventEmitter();
   @Output() handleShowBookmarkColors = new EventEmitter();
+  @Output() handleColorChange = new EventEmitter<{
+    newColor: string;
+    property: string;
+  }>();
   @Input() preferences: PreferencesInterface | null;
   name: string | undefined;
-  darkColor: string | undefined;
+  wavesColor: string | undefined;
+  greetingTextColor: string | undefined;
   showBookmarkColors: boolean | undefined;
 
   faCog = faCog;
@@ -32,14 +37,14 @@ export class PreferencesComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.name = this.preferences?.name;
-    this.darkColor = this.preferences?.darkColor;
+    this.wavesColor = this.preferences?.wavesColor;
+    this.greetingTextColor = this.preferences?.greetingTextColor;
     this.showBookmarkColors = this.preferences?.showBookmarkColors;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.showBookmarkColors =
       changes['preferences'].currentValue.showBookmarkColors;
-    console.log(this.showBookmarkColors);
   }
 
   onClick() {
@@ -50,8 +55,9 @@ export class PreferencesComponent implements OnInit, OnChanges {
     e.stopPropagation();
   }
 
-  onColorChange(e: Event) {
-    this.handleColorChange.emit(e);
+  onColorChange(e: Event, property: string) {
+    let newColor = (e.target as HTMLInputElement).value;
+    this.handleColorChange.emit({ newColor, property });
   }
 
   onNameChange(e: Event) {

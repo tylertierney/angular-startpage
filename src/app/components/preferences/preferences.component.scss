@@ -25,7 +25,7 @@
   max-width: 500px;
   min-height: 75%;
   max-height: 75%;
-  color: var(--textColor);
+  color: var(--preferencesTextColor);
   box-shadow: 10px 10px 20px 1px rgb(black, 0.5);
 
   .header {
@@ -127,23 +127,12 @@
       }
 
       .colorInput::-webkit-color-swatch {
-        border: 2px solid var(--textColor);
+        border: 2px solid var(--iconColor);
         border-radius: 4px;
         height: 100%;
         width: 100%;
         padding: 0;
       }
-
-      // .resetBtnContainer {
-      //   width: 100%;
-      //   display: flex;
-      //   align-items: center;
-      //   justify-content: flex-end !important;
-
-      //   button {
-      //     color: green;
-      //   }
-      // }
 
       @media only screen and (max-width: 600px) {
         .colorInput {

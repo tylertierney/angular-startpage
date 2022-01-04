@@ -2,9 +2,14 @@
   box-sizing: border-box;
   font-family: "Readex Pro", sans-serif;
   --hueValue: 0;
-  --darkColor: #1b1b1b;
+  --wavesColor: #1b1b1b;
   --lightColor: #302828;
   --textColor: rgb(255, 255, 255, 0.6);
+  --iconColor: rgb(255, 255, 255, 0.6);
+  --preferencesTextColor: rgb(255, 255, 255, 0.6);
+  --searchbarColor: rgb(233, 233, 233);
+  --greetingTextColor: rgb(180, 180, 180);
+
   --headerTextColor: rgb(255, 255, 255, 0.8);
 }
 
@@ -19,7 +24,7 @@ body {
   background: rgb(116, 116, 116);
   background: linear-gradient(
     0deg,
-    var(--darkColor) 33%,
+    var(--wavesColor) 33%,
     var(--lightColor) 33%
   );
 }

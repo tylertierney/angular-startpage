@@ -3,7 +3,11 @@ import { UserpreferencesService } from 'src/app/services/userpreferences.service
 import { Subscription } from 'rxjs';
 import { PreferencesInterface } from '../../services/userpreferences.service';
 import { PreferencesModalService } from 'src/app/services/preferences-modal.service';
-// import { BookmarkInterface } from 'src/app/services/userpreferences.service';
+
+interface ColorChangeDataInterface {
+  property: string;
+  newValue: string;
+}
 
 @Component({
   selector: 'app-body',
@@ -36,11 +40,8 @@ export class BodyComponent implements OnInit {
     this._preferencesModalService.togglePrefModalShowing();
   }
 
-  handleColorChange(e: InputEvent): void {
-    this.userPrefService.updateCurrentPrefs(
-      'darkColor',
-      (e.target as HTMLInputElement).value
-    );
+  handleColorChange(data: any): void {
+    this.userPrefService.updateCurrentPrefs(data.property, data.newColor);
   }
 
   handleNameChange(e: Event): void {

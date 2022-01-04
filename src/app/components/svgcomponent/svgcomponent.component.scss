@@ -24,10 +24,3 @@ svg {
 svg path {
   transition: 0.3s ease-in-out;
 }
-
-img {
-  width: inherit;
-  height: inherit;
-  mask: url("/assets/svg/netflix.svg");
-  background-color: red;
-}

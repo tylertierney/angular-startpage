@@ -9,10 +9,12 @@
     (mouseout)="
       preferences?.showBookmarkColors
         ? (link.style.color = bookmark.color)
-        : (link.style.color = 'inherit')
+        : (link.style.color = 'var(--iconColor)')
     "
     [style.display]="bookmark.active ? 'flex' : 'none'"
-    [style.color]="preferences?.showBookmarkColors ? bookmark.color : 'inherit'"
+    [style.color]="
+      preferences?.showBookmarkColors ? bookmark.color : 'var(--iconColor)'
+    "
   >
     <div
       class="iconFromLocalContainer"

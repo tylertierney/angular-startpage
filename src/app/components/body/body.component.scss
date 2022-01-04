@@ -5,11 +5,11 @@
 }
 
 .wavesContainer {
-  height: 50%;
-  width: 110%;
+  height: 50vh;
+  width: 100vw;
   position: absolute;
-  z-index: -1;
-  top: 60%;
+  top: 50vh;
+  left: 0;
 }
 
 .wavesContainer::after {
@@ -26,17 +26,9 @@
   width: 100%;
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: column;
   overflow: hidden;
-}
-
-.bodySpacer {
-  height: 55%;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  display: none;
 }
 
 .contentContainer {
@@ -48,12 +40,11 @@
   color: rgb(white, 0.6);
 }
 
-.backgroundFooter {
-  min-width: 100%;
-  width: 100%;
-  min-height: 30vh;
-  height: 30vh;
+.testingWallpaper {
   position: absolute;
-  top: 100%;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: auto;
+  height: 130vh;
 }

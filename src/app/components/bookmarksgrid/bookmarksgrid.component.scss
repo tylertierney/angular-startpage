@@ -16,10 +16,10 @@
 }
 
 .gridItem {
-  fill: var(--textColor);
+  fill: var(--iconColor);
   margin: 0.3rem 0.6rem;
   cursor: pointer;
-  color: inherit;
+  color: var(--iconColor);
   width: 11rem;
   height: 6rem;
   background-color: rgb(18, 18, 18);

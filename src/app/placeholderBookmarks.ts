@@ -105,7 +105,7 @@ export const placeholderBookmarks: BookmarkInterface[] = [
   {
     name: 'Apple TV',
     icon: faRedditAlien,
-    url: 'https://tv.apple.com/',
+    url: 'https://tv.apple.com',
     color: '#fff',
     active: true,
     isEditing: false,
@@ -114,7 +114,7 @@ export const placeholderBookmarks: BookmarkInterface[] = [
   {
     name: 'Amazon Prime',
     icon: faRedditAlien,
-    url: 'https://amazon.com/amazonprime/',
+    url: 'https://amazon.com/amazonprime',
     color: '#08a8e1',
     active: true,
     isEditing: false,
@@ -131,7 +131,7 @@ export const placeholderBookmarks: BookmarkInterface[] = [
   {
     name: 'React Icons',
     icon: faAtom,
-    url: 'https://react-icons.github.io/react-icons/',
+    url: 'https://react-icons.github.io/react-icons',
     color: '#e91e63',
     active: true,
     isEditing: false,

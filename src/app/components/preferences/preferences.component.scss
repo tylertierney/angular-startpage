@@ -65,7 +65,8 @@
         outline: none;
       }
 
-      label {
+      label,
+      span {
         margin: 0 0.7rem 0 0;
         user-select: none;
       }
@@ -134,9 +135,47 @@
         padding: 0;
       }
 
+      .bgSelectContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid;
+        border-color: inherit;
+        font-size: 1rem;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .bgSelectNative {
+        cursor: inherit;
+        appearance: none;
+        font-size: inherit;
+        font-weight: 200;
+        color: inherit;
+        background-color: transparent;
+        border: none;
+        padding-right: 1.2rem;
+        z-index: 2;
+      }
+
+      .bgSelectNative:focus {
+        outline: none;
+      }
+
+      .chevronIcon {
+        font-size: inherit;
+        position: absolute;
+        right: 0;
+      }
+
       @media only screen and (max-width: 600px) {
         .colorInput {
-          width: 1.6rem;
+          width: 1.4rem;
+          height: 1.3rem;
+        }
+
+        .showColorsInput {
+          width: 1.4rem;
           height: 1.4rem;
         }
       }

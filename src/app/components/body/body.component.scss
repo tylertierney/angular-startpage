@@ -40,11 +40,27 @@
   color: rgb(white, 0.6);
 }
 
-.testingWallpaper {
+.backgroundImgContainer {
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
-  width: auto;
-  height: 130vh;
+  height: 110vh;
+  min-width: 100vw;
+  min-height: 110vh;
+  max-height: 110vh;
+}
+
+.testingWallpaper {
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: fill;
+  object-position: center;
+  // max-width: 100%;
+  height: 100%;
+
+  min-height: 100%;
+  // max-height: 100%;
+  min-width: 100vw;
+  // min-height: 110vh;
+  // max-height: 110vh;
 }

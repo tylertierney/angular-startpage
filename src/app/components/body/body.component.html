@@ -1,7 +1,3 @@
-<!-- <img
-  class="testingWallpaper"
-  src="https://preview.redd.it/6ns2wki39h981.jpg?width=960&crop=smart&auto=webp&s=b831b47615bdb508d0a954b07f46a8b1b0716799"
-/> -->
 <div
   class="wavesContainer"
   [style.background-color]="
@@ -16,6 +12,13 @@
     ></path>
   </svg>
 </div>
+<div class="backgroundImgContainer">
+  <img
+    *ngIf="preferences?.backgroundImg?.name !== 'Waves'"
+    class="testingWallpaper"
+    [src]="preferences?.backgroundImg?.url"
+  />
+</div>
 <app-preferences
   *ngIf="prefModalIsOpen"
   (handleNameChange)="handleNameChange($event)"
@@ -23,6 +26,7 @@
   (handleShowBookmarkColors)="handleShowBookmarkColors($event)"
   [preferences]="preferences"
   (handleColorChange)="handleColorChange($event)"
+  (handleBackgroundImgChange)="handleBackgroundImgChange($event)"
 ></app-preferences>
 <div class="bodyContainer">
   <app-toolbar (toggleShowPrefModal)="toggleShowPrefModal()"></app-toolbar>

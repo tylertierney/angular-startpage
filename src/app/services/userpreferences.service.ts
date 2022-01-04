@@ -19,6 +19,10 @@ export interface PreferencesInterface {
   greetingTextColor?: string;
   bookmarks?: BookmarkInterface[];
   showBookmarkColors?: boolean;
+  backgroundImg?: {
+    name: string;
+    url: string;
+  };
 }
 
 @Injectable({
@@ -39,6 +43,10 @@ export class UserpreferencesService {
       greetingTextColor: '#b4b4b4',
       bookmarks: placeholderBookmarks,
       showBookmarkColors: false,
+      backgroundImg: {
+        name: 'Waves',
+        url: '',
+      },
     };
 
     let infoFromLocalStorage = localStorage.getItem('startpage-info');
@@ -50,6 +58,11 @@ export class UserpreferencesService {
       this.userPreferencesStore.next(parsed);
     } else {
       localStorage.setItem('startpage-info', JSON.stringify(defaultPrefs));
+      this.setCustomColorVar('--wavesColor', defaultPrefs.wavesColor);
+      this.setCustomColorVar(
+        '--greetingTextColor',
+        defaultPrefs.greetingTextColor
+      );
       this.userPreferencesStore.next(defaultPrefs);
     }
 
@@ -57,8 +70,7 @@ export class UserpreferencesService {
   };
 
   setCustomColorVar(property: string, color: string) {
-    console.log(property, color);
-    document.documentElement.style.setProperty('--wavesColor', color);
+    document.documentElement.style.setProperty(property, color);
   }
 
   updateCurrentPrefs = (

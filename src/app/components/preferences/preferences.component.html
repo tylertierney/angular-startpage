@@ -20,20 +20,9 @@
           />
         </div>
       </div>
-      <div class="flexRow formFields">
-        <!-- <div class="flexRow colorInputContainer">
-          <label for="wavesColorInput">Waves Color</label>
-          <input
-            name="wavesColorInput"
-            id="wavesColorInput"
-            class="colorInput"
-            type="color"
-            value="{{ wavesColor ? wavesColor : '#000000' }}"
-            (input)="onColorChange($event, 'wavesColor')"
-          />
-        </div> -->
+      <div class="flexRow formFields" [style.justify-content]="'space-between'">
         <div class="flexRow colorInputContainer">
-          <label for="textColorInput">Text Color</label>
+          <label for="textColorInput">Text color</label>
           <input
             name="textColorInput"
             id="textColorInput"
@@ -57,7 +46,29 @@
         </div>
       </div>
       <div class="flexRow formFields colorInputContainer">
-        <label for="wavesColorInput">Waves Color</label>
+        <span class="bgSelectLabel" id="bgSelectLabel">Background</span>
+        <div class="bgSelectContainer">
+          <select
+            (change)="onBackgroundImgChange($event)"
+            class="bgSelectNative"
+            aria-labelledby="bgSelectLabel"
+          >
+            <option
+              *ngFor="let option of bgOptionsList"
+              value="{{ option.name }}"
+              [selected]="option.name === currentBackgroundName ? true : false"
+            >
+              {{ option.name }}
+            </option>
+          </select>
+          <fa-icon class="chevronIcon" [icon]="currentChevronIcon"></fa-icon>
+        </div>
+      </div>
+      <div
+        *ngIf="preferences?.backgroundImg?.name === 'Waves'"
+        class="flexRow formFields colorInputContainer"
+      >
+        <label for="wavesColorInput">Waves color</label>
         <input
           name="wavesColorInput"
           id="wavesColorInput"
@@ -73,7 +84,8 @@
         <div class="resetSectionBottom">
           <span class="resetBtnInstructions"
             >This will reset your bookmarks to the default URLs and update your
-            bookmarks with new ones that I've added recently.</span
+            bookmarks with new ones that I've added recently. You'll also get
+            new wallpapers!</span
           >
           <button class="resetBtn" (click)="handleResetPrefs()">
             Reset&nbsp;

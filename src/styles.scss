@@ -9,14 +9,15 @@
   --preferencesTextColor: rgb(255, 255, 255, 0.6);
   --searchbarColor: rgb(233, 233, 233);
   --greetingTextColor: rgb(180, 180, 180);
-
+  --bookmarkBgColor: rgb(18, 18, 18);
   --headerTextColor: rgb(255, 255, 255, 0.8);
+  overflow-x: hidden;
 }
 
 body {
   width: 100vw;
   min-height: 100vh;
-  height: 130vh;
+  height: 110vh;
   padding: 0;
   margin: 0;
   overflow-y: scroll;

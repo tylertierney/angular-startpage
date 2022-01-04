@@ -10,7 +10,6 @@ import { PreferencesModalService } from './services/preferences-modal.service';
 import { GreetingComponent } from './components/greeting/greeting.component';
 import { BookmarksComponent } from './components/preferences/bookmarks/bookmarks.component';
 import { BookmarksgridComponent } from './components/bookmarksgrid/bookmarksgrid.component';
-import { TabsComponent } from './components/preferences/tabs/tabs.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SvgcomponentComponent } from './components/svgcomponent/svgcomponent.component';
 
@@ -23,7 +22,6 @@ import { SvgcomponentComponent } from './components/svgcomponent/svgcomponent.co
     GreetingComponent,
     BookmarksComponent,
     BookmarksgridComponent,
-    TabsComponent,
     SearchbarComponent,
     SvgcomponentComponent,
   ],

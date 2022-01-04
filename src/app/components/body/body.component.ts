@@ -3,11 +3,7 @@ import { UserpreferencesService } from 'src/app/services/userpreferences.service
 import { Subscription } from 'rxjs';
 import { PreferencesInterface } from '../../services/userpreferences.service';
 import { PreferencesModalService } from 'src/app/services/preferences-modal.service';
-
-interface ColorChangeDataInterface {
-  property: string;
-  newValue: string;
-}
+import { placeholderBackgrounds } from 'src/app/placeholderBackgrounds';
 
 @Component({
   selector: 'app-body',
@@ -58,5 +54,12 @@ export class BodyComponent implements OnInit {
     }
 
     this.userPrefService.updateCurrentPrefs('showBookmarkColors', newValue);
+  }
+
+  handleBackgroundImgChange(e: Event): void {
+    let newValue: any = placeholderBackgrounds.find(
+      (el) => el.name === (e.target as HTMLSelectElement).value
+    );
+    this.userPrefService.updateCurrentPrefs('backgroundImg', newValue);
   }
 }

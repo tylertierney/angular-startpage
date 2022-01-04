@@ -23,17 +23,17 @@
   background-color: transparent;
   border: 2px solid var(--searchbarColor);
   padding: 3px 0.2rem;
-  opacity: 0.8;
-  border-radius: 4px;
+  border-radius: 14px;
+  overflow: hidden;
   color: inherit;
   padding: 0;
+  box-shadow: 10px 10px 20px 1px rgb(0, 0, 0, 0.3);
 
   .searchbarInput {
     width: 90%;
-    height: 100%;
-    background-color: transparent;
+    background-color: var(--bookmarkBgColor);
     border: none;
-    color: var(--greetingTextColor);
+    color: inherit;
     font-size: 1.2rem;
     padding-left: 1rem;
     display: flex;

@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  background-color: var(--bookmarkBgColor);
   border: 2px solid var(--searchbarColor);
   padding: 3px 0.2rem;
   border-radius: 14px;

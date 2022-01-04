@@ -10,3 +10,12 @@
   align-items: center;
   padding: 5px;
 }
+
+.settingsBtn {
+  color: var(--greetingTextColor);
+  opacity: 0.3;
+}
+
+.settingsBtn:hover {
+  opacity: 1;
+}

@@ -17,6 +17,7 @@
     *ngIf="preferences?.backgroundImg?.name !== 'Waves'"
     class="backgroundImg"
     [src]="preferences?.backgroundImg?.url"
+    [alt]="preferences?.backgroundImg?.name + ' wallpaper'"
   />
 </div>
 <app-preferences

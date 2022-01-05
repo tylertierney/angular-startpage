@@ -12,6 +12,8 @@ import { BookmarksComponent } from './components/preferences/bookmarks/bookmarks
 import { BookmarksgridComponent } from './components/bookmarksgrid/bookmarksgrid.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SvgcomponentComponent } from './components/svgcomponent/svgcomponent.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,12 @@ import { SvgcomponentComponent } from './components/svgcomponent/svgcomponent.co
     SearchbarComponent,
     SvgcomponentComponent,
   ],
-  imports: [BrowserModule, FontAwesomeModule],
+  imports: [BrowserModule, FontAwesomeModule, ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: environment.production,
+  // Register the ServiceWorker as soon as the app is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+})],
   providers: [PreferencesModalService],
   bootstrap: [AppComponent],
 })

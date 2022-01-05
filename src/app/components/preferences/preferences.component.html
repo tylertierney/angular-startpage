@@ -87,7 +87,11 @@
             bookmarks with new ones that I've added recently. You'll also get
             new wallpapers!</span
           >
-          <button class="resetBtn" (click)="handleResetPrefs()">
+          <button
+            name="Reset Preferences"
+            class="resetBtn"
+            (click)="handleResetPrefs()"
+          >
             Reset&nbsp;
             <fa-icon [icon]="faSync"></fa-icon>
           </button>

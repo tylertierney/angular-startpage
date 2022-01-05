@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641415934521,
+  "timestamp": 1641418508196,
   "index": "https://tylertierney.github.io/angular-startpage/index.html",
   "assetGroups": [
     {
@@ -82,7 +82,7 @@
     "https://tylertierney.github.io/angular-startpage/assets/svg/netflix.svg": "c3d5bc8a76366315dfc59e4f712ee30ded35bffb",
     "https://tylertierney.github.io/angular-startpage/assets/svg/waves.svg": "b0e039365016538cc875b09b4f14aec2fb428da5",
     "https://tylertierney.github.io/angular-startpage/favicon.ico": "016ed05c019b5312004d6aee643e63b66b3e269c",
-    "https://tylertierney.github.io/angular-startpage/index.html": "2ea1b7e0579225190de6182335c72778e4c53d79",
+    "https://tylertierney.github.io/angular-startpage/index.html": "b2a76a0c599ac5c372945843859069cb2594ef2b",
     "https://tylertierney.github.io/angular-startpage/main.089f95891efb34c8.js": "7da157b9afad1d89a996c1fc6af0294d6e698b3e",
     "https://tylertierney.github.io/angular-startpage/manifest.webmanifest": "9ce68891e19af871787dd2861f0dcc641e54cc37",
     "https://tylertierney.github.io/angular-startpage/polyfills.cd2747a0273dd4ff.js": "c4411e84aa860557caca8cebfb5767ee941a3a65",

@@ -1,0 +1,111 @@
+{
+  "configVersion": 1,
+  "timestamp": 1641415934521,
+  "index": "https://tylertierney.github.io/angular-startpage/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://tylertierney.github.io/angular-startpage/favicon.ico",
+        "https://tylertierney.github.io/angular-startpage/index.html",
+        "https://tylertierney.github.io/angular-startpage/main.089f95891efb34c8.js",
+        "https://tylertierney.github.io/angular-startpage/manifest.webmanifest",
+        "https://tylertierney.github.io/angular-startpage/polyfills.cd2747a0273dd4ff.js",
+        "https://tylertierney.github.io/angular-startpage/runtime.ea20f14868585cb6.js",
+        "https://tylertierney.github.io/angular-startpage/styles.bb5cb14fe4d3a9fd.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://tylertierney.github.io/angular-startpage/assets/icons/apple-touch-icon.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house128x128.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house144x144.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house152x152.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house192x192.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house384x384.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house512x512.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house72x72.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/house96x96.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-128x128.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-144x144.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-152x152.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-192x192.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-384x384.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-512x512.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-72x72.png",
+        "https://tylertierney.github.io/angular-startpage/assets/icons/icon-96x96.png",
+        "https://tylertierney.github.io/angular-startpage/assets/svg/amazonprime.svg",
+        "https://tylertierney.github.io/angular-startpage/assets/svg/appletv.svg",
+        "https://tylertierney.github.io/angular-startpage/assets/svg/disneyplus.svg",
+        "https://tylertierney.github.io/angular-startpage/assets/svg/hulu.svg",
+        "https://tylertierney.github.io/angular-startpage/assets/svg/netflix.svg",
+        "https://tylertierney.github.io/angular-startpage/assets/svg/waves.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://tylertierney.github.io/angular-startpage/assets/icons/apple-touch-icon.png": "c1360e327b008854f0214e002d2adfa15b1de7c0",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house128x128.png": "25ed69e0a8c78a128661e3a7ed44af5eae1c2f9b",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house144x144.png": "e089bb991737b01592be06d07a19c318eb68f949",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house152x152.png": "84340d251d3cf7bddd29c0952cc89a1f36cc899e",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house192x192.png": "3a5f658d0adbc831081308b91bbfe923c55915fa",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house384x384.png": "65866bdbaae4f48a6f21ed2b58d808bea52de371",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house512x512.png": "a82df0702be8020c302cf9848c9eb4bb3a27288e",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house72x72.png": "f5df85b665ee3894f991a25eff8f3e72e832cdd1",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/house96x96.png": "0429df591cf980b299607ce080c786c0ebb4e458",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://tylertierney.github.io/angular-startpage/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://tylertierney.github.io/angular-startpage/assets/svg/amazonprime.svg": "774bd97ec31c5e92aa513f0b2a08763d7b706203",
+    "https://tylertierney.github.io/angular-startpage/assets/svg/appletv.svg": "6a9857d33053fe5c53dbec076c2c84b2089a6c44",
+    "https://tylertierney.github.io/angular-startpage/assets/svg/disneyplus.svg": "098eb92362afa36862175b79f1ad8eb65ea14ec5",
+    "https://tylertierney.github.io/angular-startpage/assets/svg/hulu.svg": "922f9744435354037443df8bb3481936848f9460",
+    "https://tylertierney.github.io/angular-startpage/assets/svg/netflix.svg": "c3d5bc8a76366315dfc59e4f712ee30ded35bffb",
+    "https://tylertierney.github.io/angular-startpage/assets/svg/waves.svg": "b0e039365016538cc875b09b4f14aec2fb428da5",
+    "https://tylertierney.github.io/angular-startpage/favicon.ico": "016ed05c019b5312004d6aee643e63b66b3e269c",
+    "https://tylertierney.github.io/angular-startpage/index.html": "2ea1b7e0579225190de6182335c72778e4c53d79",
+    "https://tylertierney.github.io/angular-startpage/main.089f95891efb34c8.js": "7da157b9afad1d89a996c1fc6af0294d6e698b3e",
+    "https://tylertierney.github.io/angular-startpage/manifest.webmanifest": "9ce68891e19af871787dd2861f0dcc641e54cc37",
+    "https://tylertierney.github.io/angular-startpage/polyfills.cd2747a0273dd4ff.js": "c4411e84aa860557caca8cebfb5767ee941a3a65",
+    "https://tylertierney.github.io/angular-startpage/runtime.ea20f14868585cb6.js": "00ecd5945ae0e1667dff4bd09cb1aa9d2a4e198b",
+    "https://tylertierney.github.io/angular-startpage/styles.bb5cb14fe4d3a9fd.css": "7f6bcda32dc78b0e1961ef0056cf95cd3f7140bb"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
